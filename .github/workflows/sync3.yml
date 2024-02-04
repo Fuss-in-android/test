@@ -35,6 +35,7 @@ jobs:
         target_repo_token: ${{ secrets.WORKFLOW_TOKEN }}
         upstream_sync_branch: main
         upstream_sync_repo: WolfAURman/test
+        git_config_user: WolfAURman-bot
 
         # Set test_mode true to run tests instead of the true action!!
         test_mode: true
