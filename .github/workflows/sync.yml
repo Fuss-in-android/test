@@ -7,6 +7,7 @@ env:
   # Over here, we use a PAT instead to authenticate workflow file changes.
   WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN2 }}
   # Optional, defaults to main
+  GITHUB_ACTOR: WolfAURman-bot
   UPSTREAM_BRANCH: "main"
   # Optional, defaults to UPSTREAM_BRANCH
   DOWNSTREAM_BRANCH: ""
@@ -32,7 +33,8 @@ jobs:
     steps:
       - name: GitHub Sync to Upstream Repository
         uses: dabreadman/sync-upstream-repo@v1.3.0
-        with: 
+        with:
+          GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
           upstream_repo: ${{ env.UPSTREAM_URL }}
           upstream_branch: ${{ env.UPSTREAM_BRANCH }}
           downstream_branch: ${{ env.DOWNSTREAM_BRANCH }}
