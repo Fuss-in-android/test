@@ -36,7 +36,8 @@ jobs:
         upstream_sync_branch: main
         upstream_sync_repo: WolfAURman/test
         git_config_user: WolfAURman-bot
-
+        git_config_email: ${{ secrets.WORKFLOW_EMAIL }}
+        
         # Set test_mode true to run tests instead of the true action!!
         test_mode: false
       
