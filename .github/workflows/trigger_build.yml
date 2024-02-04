@@ -1,12 +1,17 @@
 name: workflow_01
 on:
-  workflow_dispatch:
-     inputs:
-      workflow_02:
-        description: 'ًWorkflow 2 which will be triggered'
-        required: true
-        default: 'workflow_02'
-
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+#  workflow_dispatch:
+#     inputs:
+#      workflow_02:
+#        description: 'ًWorkflow 2 which will be triggered'
+#        required: true
+#        default: 'workflow_02'
+#
 #      workflow2_github_account:
 #        description: 'GitHub Account Owner'
 #        required: true
